@@ -17,15 +17,6 @@ const questions = () => {
                 type: 'input',
                 name: 'description',
                 message: 'Please write a description of your project',
-
-                validate: nameInput => {
-                    if (nameInput) {
-                        return true;
-                    } else {
-                        console.log('Enter your response again');
-                        return false;
-                    }
-                }
             },
             {
                 type: 'input',
@@ -62,7 +53,6 @@ const questions = () => {
                 name: 'license',
                 message: 'What license does your application have?',
                 choices: ['MIT', 'GNU', 'ISC', 'APACHE'],
-                default: ["MIT"],
 
                 validate: nameInput => {
                     if (nameInput) {
@@ -123,15 +113,12 @@ const writeFile = data => {
 
 
 // TODO: Create a function to initialize app
-function init() {
-    questions()
+function init() { questions()
     .then(answers => {
         return generateMarkdown(answers);
     })
     .then( data => {
-        return writeFile(data);    })
-
-};
+        return writeFile(data);    }) };
 
 // Function call to initialize app
 init();
