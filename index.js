@@ -10,13 +10,32 @@ const questions = () => {
             {
                 type: "input",
                 name: "title",
-                message: "What is the title of the project?"
+                message: "What is the title of the project?",
+                
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Enter your response again');
+                        return false;
+                    }
+                }
             },
 
             {
                 type: 'input',
                 name: 'description',
                 message: 'Please write a description of your project',
+                
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Enter your response again');
+                        return false;
+                    }
+                }
+
             },
             {
                 type: 'input',
